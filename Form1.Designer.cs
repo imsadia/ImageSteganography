@@ -64,7 +64,7 @@
             // 
             // btnFileBrowse
             // 
-            this.btnFileBrowse.BackColor = System.Drawing.Color.Indigo;
+            this.btnFileBrowse.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnFileBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFileBrowse.Location = new System.Drawing.Point(415, 49);
             this.btnFileBrowse.Name = "btnFileBrowse";
@@ -75,7 +75,7 @@
             // 
             // btnImgBrowse
             // 
-            this.btnImgBrowse.BackColor = System.Drawing.Color.Indigo;
+            this.btnImgBrowse.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnImgBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImgBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImgBrowse.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -180,7 +180,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Indigo;
+            this.btnClose.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(40, 152);
@@ -193,7 +193,7 @@
             // 
             // btnDecrypt
             // 
-            this.btnDecrypt.BackColor = System.Drawing.Color.Indigo;
+            this.btnDecrypt.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDecrypt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDecrypt.Location = new System.Drawing.Point(40, 94);
@@ -205,7 +205,7 @@
             // 
             // btnEncrypt
             // 
-            this.btnEncrypt.BackColor = System.Drawing.Color.Indigo;
+            this.btnEncrypt.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnEncrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEncrypt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEncrypt.Location = new System.Drawing.Point(40, 36);
