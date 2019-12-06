@@ -1,0 +1,8 @@
+http://www.vcskicks.com/image-from-file.php
+https://stackoverflow.com/questions/16822138/fit-image-into-picturebox
+https://www.c-sharpcorner.com/UploadFile/mahesh/how-to-read-a-text-file-in-C-Sharp/
+https://stackoverflow.com/questions/10651686/convert-the-image-in-a-picturebox-into-a-bitmap
+https://stackoverflow.com/questions/221345/how-to-get-the-file-size-of-a-system-drawing-image
+https://stackoverflow.com/questions/19090125/round-to-1-decimal-place-in-c-sharp/19090253
+https://www.dotnetperls.com/convert-bytes-megabytes
+https://www.c-sharpcorner.com/forums/calculate-total-pixels-in-an-image
