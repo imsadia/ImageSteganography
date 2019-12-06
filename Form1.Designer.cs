@@ -294,7 +294,6 @@
             this.lbSize.Name = "lbSize";
             this.lbSize.Size = new System.Drawing.Size(0, 15);
             this.lbSize.TabIndex = 7;
-            this.lbSize.Click += new System.EventHandler(this.LbSize_Click);
             // 
             // mainForm
             // 

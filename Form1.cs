@@ -64,10 +64,5 @@ namespace VP_Project
                 rtbTextFile.Text = File.ReadAllText(textFilePath);
             }
         }
-
-        private void LbSize_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
