@@ -34,7 +34,12 @@
             this.tbFileBrowse = new System.Windows.Forms.TextBox();
             this.tbImgBrowse = new System.Windows.Forms.TextBox();
             this.groupBoxImgPreview = new System.Windows.Forms.GroupBox();
+            this.pbDisplayImage = new System.Windows.Forms.PictureBox();
             this.groupBoxImgInfo = new System.Windows.Forms.GroupBox();
+            this.lbSize = new System.Windows.Forms.Label();
+            this.lbPixels = new System.Windows.Forms.Label();
+            this.lbWidth = new System.Windows.Forms.Label();
+            this.lbHeight = new System.Windows.Forms.Label();
             this.lblImgPixels = new System.Windows.Forms.Label();
             this.lblImgSize = new System.Windows.Forms.Label();
             this.lblImgWidth = new System.Windows.Forms.Label();
@@ -43,18 +48,13 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDecrypt = new System.Windows.Forms.Button();
             this.btnEncrypt = new System.Windows.Forms.Button();
-            this.pbDisplayImage = new System.Windows.Forms.PictureBox();
             this.gbTextFile = new System.Windows.Forms.GroupBox();
             this.rtbTextFile = new System.Windows.Forms.RichTextBox();
-            this.lbHeight = new System.Windows.Forms.Label();
-            this.lbWidth = new System.Windows.Forms.Label();
-            this.lbPixels = new System.Windows.Forms.Label();
-            this.lbSize = new System.Windows.Forms.Label();
             this.groupBoxBrowseFiles.SuspendLayout();
             this.groupBoxImgPreview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDisplayImage)).BeginInit();
             this.groupBoxImgInfo.SuspendLayout();
             this.groupBoxButtons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDisplayImage)).BeginInit();
             this.gbTextFile.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,6 +123,14 @@
             this.groupBoxImgPreview.TabStop = false;
             this.groupBoxImgPreview.Text = "Image Preview";
             // 
+            // pbDisplayImage
+            // 
+            this.pbDisplayImage.Location = new System.Drawing.Point(6, 19);
+            this.pbDisplayImage.Name = "pbDisplayImage";
+            this.pbDisplayImage.Size = new System.Drawing.Size(371, 310);
+            this.pbDisplayImage.TabIndex = 0;
+            this.pbDisplayImage.TabStop = false;
+            // 
             // groupBoxImgInfo
             // 
             this.groupBoxImgInfo.Controls.Add(this.lbSize);
@@ -141,6 +149,42 @@
             this.groupBoxImgInfo.TabIndex = 2;
             this.groupBoxImgInfo.TabStop = false;
             this.groupBoxImgInfo.Text = "Image Information";
+            // 
+            // lbSize
+            // 
+            this.lbSize.AutoSize = true;
+            this.lbSize.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSize.Location = new System.Drawing.Point(104, 132);
+            this.lbSize.Name = "lbSize";
+            this.lbSize.Size = new System.Drawing.Size(0, 15);
+            this.lbSize.TabIndex = 7;
+            // 
+            // lbPixels
+            // 
+            this.lbPixels.AutoSize = true;
+            this.lbPixels.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPixels.Location = new System.Drawing.Point(104, 100);
+            this.lbPixels.Name = "lbPixels";
+            this.lbPixels.Size = new System.Drawing.Size(0, 15);
+            this.lbPixels.TabIndex = 6;
+            // 
+            // lbWidth
+            // 
+            this.lbWidth.AutoSize = true;
+            this.lbWidth.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWidth.Location = new System.Drawing.Point(104, 68);
+            this.lbWidth.Name = "lbWidth";
+            this.lbWidth.Size = new System.Drawing.Size(0, 15);
+            this.lbWidth.TabIndex = 5;
+            // 
+            // lbHeight
+            // 
+            this.lbHeight.AutoSize = true;
+            this.lbHeight.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHeight.Location = new System.Drawing.Point(103, 35);
+            this.lbHeight.Name = "lbHeight";
+            this.lbHeight.Size = new System.Drawing.Size(0, 15);
+            this.lbHeight.TabIndex = 4;
             // 
             // lblImgPixels
             // 
@@ -231,14 +275,7 @@
             this.btnEncrypt.TabIndex = 0;
             this.btnEncrypt.Text = "Encrypt";
             this.btnEncrypt.UseVisualStyleBackColor = false;
-            // 
-            // pbDisplayImage
-            // 
-            this.pbDisplayImage.Location = new System.Drawing.Point(6, 19);
-            this.pbDisplayImage.Name = "pbDisplayImage";
-            this.pbDisplayImage.Size = new System.Drawing.Size(371, 310);
-            this.pbDisplayImage.TabIndex = 0;
-            this.pbDisplayImage.TabStop = false;
+            this.btnEncrypt.Click += new System.EventHandler(this.BtnEncrypt_Click);
             // 
             // gbTextFile
             // 
@@ -259,42 +296,6 @@
             this.rtbTextFile.TabIndex = 0;
             this.rtbTextFile.Text = "";
             // 
-            // lbHeight
-            // 
-            this.lbHeight.AutoSize = true;
-            this.lbHeight.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHeight.Location = new System.Drawing.Point(103, 35);
-            this.lbHeight.Name = "lbHeight";
-            this.lbHeight.Size = new System.Drawing.Size(0, 15);
-            this.lbHeight.TabIndex = 4;
-            // 
-            // lbWidth
-            // 
-            this.lbWidth.AutoSize = true;
-            this.lbWidth.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWidth.Location = new System.Drawing.Point(104, 68);
-            this.lbWidth.Name = "lbWidth";
-            this.lbWidth.Size = new System.Drawing.Size(0, 15);
-            this.lbWidth.TabIndex = 5;
-            // 
-            // lbPixels
-            // 
-            this.lbPixels.AutoSize = true;
-            this.lbPixels.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPixels.Location = new System.Drawing.Point(104, 100);
-            this.lbPixels.Name = "lbPixels";
-            this.lbPixels.Size = new System.Drawing.Size(0, 15);
-            this.lbPixels.TabIndex = 6;
-            // 
-            // lbSize
-            // 
-            this.lbSize.AutoSize = true;
-            this.lbSize.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSize.Location = new System.Drawing.Point(104, 132);
-            this.lbSize.Name = "lbSize";
-            this.lbSize.Size = new System.Drawing.Size(0, 15);
-            this.lbSize.TabIndex = 7;
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,10 +315,10 @@
             this.groupBoxBrowseFiles.ResumeLayout(false);
             this.groupBoxBrowseFiles.PerformLayout();
             this.groupBoxImgPreview.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbDisplayImage)).EndInit();
             this.groupBoxImgInfo.ResumeLayout(false);
             this.groupBoxImgInfo.PerformLayout();
             this.groupBoxButtons.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbDisplayImage)).EndInit();
             this.gbTextFile.ResumeLayout(false);
             this.ResumeLayout(false);
 
