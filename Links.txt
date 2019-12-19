@@ -6,3 +6,5 @@ https://stackoverflow.com/questions/221345/how-to-get-the-file-size-of-a-system-
 https://stackoverflow.com/questions/19090125/round-to-1-decimal-place-in-c-sharp/19090253
 https://www.dotnetperls.com/convert-bytes-megabytes
 https://www.c-sharpcorner.com/forums/calculate-total-pixels-in-an-image
+https://stackoverflow.com/questions/14420373/convert-decimal-to-binary-but-in-an-8-bit-format
+https://stackoverflow.com/questions/5852444/how-to-replace-last-character-of-the-string-using-c/15753906

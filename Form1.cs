@@ -15,7 +15,8 @@ namespace VP_Project
     {
         string imagePath;
         string textFilePath;
-        string messageToHide;
+        string messageToHide, messageToHideInBinary;
+        string red, green, blue;
         double textFileSize, imgFileSize;
         OpenFileDialog opf;
         Bitmap bmpImage;
@@ -24,11 +25,11 @@ namespace VP_Project
             InitializeComponent();
             opf = new OpenFileDialog();
         }
-        public enum State
-        {
-            hiding,
-            fillingWithZeros,
-        };
+        //public enum State
+        //{
+        //    hiding,
+        //    fillingWithZeros,
+        //};
         private void BtnClose_Click(object sender, EventArgs e)
         {
             System.Environment.Exit(0);
@@ -89,7 +90,8 @@ namespace VP_Project
             else
             {
                 MessageBox.Show("Encryption has started", "Processing....", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                State state = State.hiding;
+                //copied from internet
+                /*State state = State.hiding;
                 int i, j, k = 0;
                 int charIndex = 0;
                 long pixelElementIndex = 0;
@@ -158,6 +160,58 @@ namespace VP_Project
                     }
                 }
                 bmpImage.Save(@"C:\Users\malik\OneDrive\Documents\GitHub\VP-Project\img.bmp");
+                MessageBox.Show("Encryption has been finished.", "Encryption Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+                
+                //done by me
+                foreach (char c in messageToHide)
+                {
+                    messageToHideInBinary += Convert.ToString((int)c, 2); //converting text message to binary
+                }
+                //MessageBox.Show(messageToHideInBinary.ToString());
+                int i, j, R, G, B, size, charIndex = 0;
+                string r, g, b;
+                int dR, dG, dB; //variables declaration
+                size = messageToHideInBinary.Length;
+                for (i = 0; i < bmpImage.Width; i++) //looping through each pixel
+                {
+                    for (j = 0; j < bmpImage.Height; j++)
+                    {
+                        Color pixels = bmpImage.GetPixel(i, j);
+                        R = pixels.R; 
+                        G = pixels.G;
+                        B = pixels.B; //getting R, G, B values in decimal
+                        //MessageBox.Show(R + "," + G + "," + B);
+                        r = Convert.ToString(R, 2).PadLeft(8, '0');
+                        g = Convert.ToString(G, 2).PadLeft(8, '0');
+                        b = Convert.ToString(B, 2).PadLeft(8, '0'); //converting R, G, B values to binary
+                        //MessageBox.Show(r + "," + g + "," + b);
+                        
+                        //MessageBox.Show(size.ToString());
+                        if (charIndex < size) //charIndex should not be greater than size
+                        {
+                            //removing LSB and replacing with binary of text message
+                            r = r.Remove(r.Length - 1, 1) + messageToHideInBinary[charIndex];
+                            charIndex++;
+                            g = g.Remove(g.Length - 1, 1) + messageToHideInBinary[charIndex];
+                            charIndex++;
+                            b = b.Remove(b.Length - 1, 1) + messageToHideInBinary[charIndex];
+                            charIndex++;
+                        }
+                        else
+                        {
+                            r = r;
+                            g = g;
+                            b = b;
+                        }
+                        //MessageBox.Show(r + "," + g + "," + b);
+                        dR = Convert.ToInt32(r, 2); 
+                        dG = Convert.ToInt32(g, 2); //converting modified binary to decimal
+                        dB = Convert.ToInt32(b, 2);
+                        //MessageBox.Show(dR + "," + dG + "," + dB);
+                        bmpImage.SetPixel(i, j, Color.FromArgb(dR, dG, dB)); //setting in image pixels
+                    }
+                }
+                bmpImage.Save(@"C:\Users\malik\OneDrive\Documents\GitHub\VP-Project\image.bmp"); //saving data encrypted image
                 MessageBox.Show("Encryption has been finished.", "Encryption Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
