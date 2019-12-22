@@ -8,3 +8,8 @@ https://www.dotnetperls.com/convert-bytes-megabytes
 https://www.c-sharpcorner.com/forums/calculate-total-pixels-in-an-image
 https://stackoverflow.com/questions/14420373/convert-decimal-to-binary-but-in-an-8-bit-format
 https://stackoverflow.com/questions/5852444/how-to-replace-last-character-of-the-string-using-c/15753906
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file
+https://bytes.com/topic/c-sharp/answers/534843-convert-binary-data-ascii
+https://www.codeproject.com/Questions/211192/How-to-convert-string-to-byte-array-and-vice-versa
+https://stackoverflow.com/questions/6554869/byte-to-ascii
+https://stackoverflow.com/questions/3436398/convert-a-binary-string-representation-to-a-byte-array

@@ -46,8 +46,7 @@ namespace VP_Project
                     Color pixels = bmpImage.GetPixel(i, j);
                     R = pixels.R;
                     G = pixels.G;
-                    B = pixels.B; //getting R, G, B values in decimal
-                                  //MessageBox.Show(R + "," + G + "," + B);
+                    B = pixels.B; 
                     r = Convert.ToString(R, 2).PadLeft(8, '0');
                     g = Convert.ToString(G, 2).PadLeft(8, '0');
                     b = Convert.ToString(B, 2).PadLeft(8, '0'); //converting R, G, B values to binary
@@ -56,7 +55,7 @@ namespace VP_Project
                     {
                         if(count < size)
                         {
-                            decryptedMessageInBinary += r[r.Length - 1];
+                            decryptedMessageInBinary += r[r.Length - 1]; //extracting and saving least significant bit
                             count++;
                         }
                         if(count < size)
@@ -106,8 +105,6 @@ namespace VP_Project
             rtbTextFile.Text = "";
             pbDisplayImage.Image = null;
         }
-
-
 
         //public Byte[] GetBytesFromBinaryString(String binary)
         //{
