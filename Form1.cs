@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace VP_Project
 {
@@ -15,9 +16,9 @@ namespace VP_Project
     {
         string imagePath;
         string textFilePath;
-        string messageToHide, messageToHideInBinary;
-        string red, green, blue;
+        string messageToHide, messageToHideInBinary, decryptedMessageInBinary = "";
         double textFileSize, imgFileSize;
+        int size;
         OpenFileDialog opf;
         Bitmap bmpImage;
         public mainForm()
@@ -25,11 +26,104 @@ namespace VP_Project
             InitializeComponent();
             opf = new OpenFileDialog();
         }
-        //public enum State
+
+        private void BtnDecrypt_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Decryption has started. Please Wait!", "Processing....", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            int i, j, R, G, B, count = 0;
+            string r, g, b;
+            //messageToHide = File.ReadAllText(@"C:\Users\malik\OneDrive\Documents\GitHub\VP-Project\VPProjectTest");
+            //foreach (char c in messageToHide)
+            //{
+            //    messageToHideInBinary += Convert.ToString((int)c, 2); //converting text message to binary
+            //}
+            //int messageSize = messageToHideInBinary.Length;
+            for (i = 0; i < bmpImage.Width; i++)
+            {
+                for (j = 0; j < bmpImage.Height; j++)
+                {
+                   
+                    Color pixels = bmpImage.GetPixel(i, j);
+                    R = pixels.R;
+                    G = pixels.G;
+                    B = pixels.B; //getting R, G, B values in decimal
+                                  //MessageBox.Show(R + "," + G + "," + B);
+                    r = Convert.ToString(R, 2).PadLeft(8, '0');
+                    g = Convert.ToString(G, 2).PadLeft(8, '0');
+                    b = Convert.ToString(B, 2).PadLeft(8, '0'); //converting R, G, B values to binary
+                    //MessageBox.Show(r + "," + g + "," + b);
+                    if(count < size)
+                    {
+                        if(count < size)
+                        {
+                            decryptedMessageInBinary += r[r.Length - 1];
+                            count++;
+                        }
+                        if(count < size)
+                        {
+                            decryptedMessageInBinary += g[g.Length - 1];
+                            count++;
+                        }
+                        if(count < size)
+                        {
+                            decryptedMessageInBinary += b[b.Length - 1];
+                            count++;
+                        }
+                    }
+                }
+            }
+            MessageBox.Show(decryptedMessageInBinary);
+
+            //byte[] bArr = new byte[decryptedMessageInBinary.Length / 8];
+            //for (int n = 0; n < decryptedMessageInBinary.Length / 8; n++)
+            //{
+            //    String part = decryptedMessageInBinary.Substring(n * 8, 8);
+            //    bArr[n] += Convert.ToByte(part, 2);
+            //}
+            //ASCIIEncoding encoding = new ASCIIEncoding();
+
+            //MessageBox.Show(encoding.GetString(bArr));
+
+            //MessageBox.Show(data);
+            //decryptedMessageInBinary = Regex.Replace(decryptedMessageInBinary, @"\s", "");
+            //byte[] bytes = Encoding.ASCII.GetBytes(decryptedMessageInBinary);
+            if(decryptedMessageInBinary == messageToHideInBinary)
+            {
+                rtbTextFile.Text = messageToHide;
+                File.WriteAllText(@"C:\Users\malik\OneDrive\Documents\GitHub\VP-Project\decrypted-message.txt", messageToHide);
+                MessageBox.Show("Decryption has been finished successfully and Decrypted Message is saved successfully in Text File.", "Decryption Successful!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Decryption has failed!", "Decryption Fail!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            tbImgBrowse.Text = "";
+            tbFileBrowse.Text = "";
+            rtbTextFile.Text = "";
+            pbDisplayImage.Image = null;
+        }
+
+
+
+        //public Byte[] GetBytesFromBinaryString(String binary)
         //{
-        //    hiding,
-        //    fillingWithZeros,
-        //};
+        //    var list = new List<Byte>();
+
+        //    for (int i = 0; i < binary.Length; i += 8)
+        //    {
+        //        String t = binary.Substring(i, 8);
+        //        MessageBox.Show(t);
+
+        //        list.Add(Convert.ToByte(t, 2));
+        //    }
+
+        //    return list.ToArray();
+        //}
+
         private void BtnClose_Click(object sender, EventArgs e)
         {
             System.Environment.Exit(0);
@@ -50,7 +144,6 @@ namespace VP_Project
                 lbHeight.Text = bmpImage.Height.ToString();
                 lbWidth.Text = bmpImage.Width.ToString();
                 lbSize.Text = kb + " KB";
-
                 int i, j, numberOfPixels = 0;
                 for (i = 0; i < bmpImage.Width; i++)
                 {
@@ -85,11 +178,11 @@ namespace VP_Project
             }
             else if(pbDisplayImage.Image == null || rtbTextFile.Text == String.Empty)
             {
-                MessageBox.Show("Please choose image or text file to complete encryption", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please choose image or text file to complete encryption!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Encryption has started", "Processing....", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Encryption has started. Please Wait!", "Processing....", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //copied from internet
                 /*State state = State.hiding;
                 int i, j, k = 0;
@@ -161,14 +254,19 @@ namespace VP_Project
                 }
                 bmpImage.Save(@"C:\Users\malik\OneDrive\Documents\GitHub\VP-Project\img.bmp");
                 MessageBox.Show("Encryption has been finished.", "Encryption Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
-                
+
                 //done by me
-                foreach (char c in messageToHide)
+                //foreach (char c in messageToHide)
+                //{
+                //    messageToHideInBinary += Convert.ToString((int)c, 2); //converting text message to binary
+                //}
+                byte[] bytes = Encoding.ASCII.GetBytes(messageToHide);
+                foreach (byte by in bytes)
                 {
-                    messageToHideInBinary += Convert.ToString((int)c, 2); //converting text message to binary
+                    messageToHideInBinary += Convert.ToString(by, 2);
                 }
-                //MessageBox.Show(messageToHideInBinary.ToString());
-                int i, j, R, G, B, size, charIndex = 0;
+                MessageBox.Show(messageToHideInBinary.ToString());
+                int i, j, R, G, B, charIndex = 0;
                 string r, g, b;
                 int dR, dG, dB; //variables declaration
                 size = messageToHideInBinary.Length;
@@ -190,12 +288,21 @@ namespace VP_Project
                         if (charIndex < size) //charIndex should not be greater than size
                         {
                             //removing LSB and replacing with binary of text message
-                            r = r.Remove(r.Length - 1, 1) + messageToHideInBinary[charIndex];
-                            charIndex++;
-                            g = g.Remove(g.Length - 1, 1) + messageToHideInBinary[charIndex];
-                            charIndex++;
-                            b = b.Remove(b.Length - 1, 1) + messageToHideInBinary[charIndex];
-                            charIndex++;
+                            if(charIndex < size)
+                            {
+                                r = r.Remove(r.Length - 1, 1) + messageToHideInBinary[charIndex];
+                                charIndex++;
+                            }
+                            if(charIndex < size)
+                            {
+                                g = g.Remove(g.Length - 1, 1) + messageToHideInBinary[charIndex];
+                                charIndex++;
+                            }
+                            if(charIndex < size)
+                            {
+                                b = b.Remove(b.Length - 1, 1) + messageToHideInBinary[charIndex];
+                                charIndex++;
+                            }
                         }
                         else
                         {
@@ -212,7 +319,7 @@ namespace VP_Project
                     }
                 }
                 bmpImage.Save(@"C:\Users\malik\OneDrive\Documents\GitHub\VP-Project\image.bmp"); //saving data encrypted image
-                MessageBox.Show("Encryption has been finished.", "Encryption Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Encryption has been finished successfully and Encrypted Image is saved successfully.", "Encryption Successful!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

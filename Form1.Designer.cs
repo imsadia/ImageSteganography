@@ -45,6 +45,7 @@
             this.lblImgWidth = new System.Windows.Forms.Label();
             this.lblImgHeight = new System.Windows.Forms.Label();
             this.groupBoxButtons = new System.Windows.Forms.GroupBox();
+            this.resetButton = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDecrypt = new System.Windows.Forms.Button();
             this.btnEncrypt = new System.Windows.Forms.Button();
@@ -228,6 +229,7 @@
             // 
             // groupBoxButtons
             // 
+            this.groupBoxButtons.Controls.Add(this.resetButton);
             this.groupBoxButtons.Controls.Add(this.btnClose);
             this.groupBoxButtons.Controls.Add(this.btnDecrypt);
             this.groupBoxButtons.Controls.Add(this.btnEncrypt);
@@ -239,12 +241,25 @@
             this.groupBoxButtons.TabStop = false;
             this.groupBoxButtons.Text = "Buttons";
             // 
+            // resetButton
+            // 
+            this.resetButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetButton.Location = new System.Drawing.Point(40, 118);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(130, 39);
+            this.resetButton.TabIndex = 3;
+            this.resetButton.Text = "Reset";
+            this.resetButton.UseVisualStyleBackColor = false;
+            this.resetButton.Click += new System.EventHandler(this.ResetButton_Click);
+            // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(40, 152);
+            this.btnClose.Location = new System.Drawing.Point(40, 163);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(130, 39);
             this.btnClose.TabIndex = 2;
@@ -257,19 +272,20 @@
             this.btnDecrypt.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDecrypt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDecrypt.Location = new System.Drawing.Point(40, 94);
+            this.btnDecrypt.Location = new System.Drawing.Point(40, 73);
             this.btnDecrypt.Name = "btnDecrypt";
             this.btnDecrypt.Size = new System.Drawing.Size(130, 39);
             this.btnDecrypt.TabIndex = 1;
             this.btnDecrypt.Text = "Decrypt";
             this.btnDecrypt.UseVisualStyleBackColor = false;
+            this.btnDecrypt.Click += new System.EventHandler(this.BtnDecrypt_Click);
             // 
             // btnEncrypt
             // 
             this.btnEncrypt.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnEncrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEncrypt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEncrypt.Location = new System.Drawing.Point(40, 36);
+            this.btnEncrypt.Location = new System.Drawing.Point(40, 28);
             this.btnEncrypt.Name = "btnEncrypt";
             this.btnEncrypt.Size = new System.Drawing.Size(130, 39);
             this.btnEncrypt.TabIndex = 0;
@@ -348,6 +364,7 @@
         private System.Windows.Forms.Label lbPixels;
         private System.Windows.Forms.Label lbWidth;
         private System.Windows.Forms.Label lbHeight;
+        private System.Windows.Forms.Button resetButton;
     }
 }
 
