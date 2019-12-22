@@ -94,7 +94,7 @@ namespace VP_Project
             }
             else
             {
-                MessageBox.Show("Decryption has failed!", "Decryption Fail!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Decryption has failed! Please try again.", "Decryption Fail!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
