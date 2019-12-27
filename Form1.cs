@@ -32,7 +32,7 @@ namespace VP_Project
         public void readTextFile()
         {
             // Default folder  
-             string rootFolder = @"C:\Users\malik\OneDrive\Documents\GitHub\VP-Project\VPProjectTest\";
+             //string rootFolder = @"C:\Users\malik\OneDrive\Documents\GitHub\VP-Project\VPProjectTest\";
             textFile = @"C:\Users\malik\OneDrive\Documents\GitHub\VP-Project\VPProjectTest\test.txt";
             if (File.Exists(textFile))
             {
