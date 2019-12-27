@@ -13,3 +13,4 @@ https://bytes.com/topic/c-sharp/answers/534843-convert-binary-data-ascii
 https://www.codeproject.com/Questions/211192/How-to-convert-string-to-byte-array-and-vice-versa
 https://stackoverflow.com/questions/6554869/byte-to-ascii
 https://stackoverflow.com/questions/3436398/convert-a-binary-string-representation-to-a-byte-array
+https://www.c-sharpcorner.com/UploadFile/mahesh/how-to-read-a-text-file-in-C-Sharp/
