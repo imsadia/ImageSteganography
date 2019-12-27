@@ -16,6 +16,7 @@ namespace VP_Project
     {
         string imagePath;
         string textFilePath;
+        string textFile;
         string messageToHide, messageToHideInBinary, decryptedMessageInBinary = "";
         double textFileSize, imgFileSize;
         int size;
@@ -25,8 +26,27 @@ namespace VP_Project
         {
             InitializeComponent();
             opf = new OpenFileDialog();
+            readTextFile();
         }
 
+        public void readTextFile()
+        {
+            // Default folder  
+             string rootFolder = @"C:\Users\malik\OneDrive\Documents\GitHub\VP-Project\VPProjectTest\";
+            textFile = @"C:\Users\malik\OneDrive\Documents\GitHub\VP-Project\VPProjectTest\test.txt";
+            if (File.Exists(textFile))
+            {
+                messageToHide = File.ReadAllText(textFile);
+                byte[] bytes = Encoding.ASCII.GetBytes(messageToHide);
+                foreach (byte by in bytes)
+                {
+                    messageToHideInBinary += Convert.ToString(by, 2);
+                }
+                //MessageBox.Show(messageToHideInBinary.ToString());
+                size = messageToHideInBinary.Length;
+                //MessageBox.Show(messageToHide);
+            }
+        }
         private void BtnDecrypt_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Decryption has started. Please Wait!", "Processing....", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -71,7 +91,7 @@ namespace VP_Project
                     }
                 }
             }
-            MessageBox.Show(decryptedMessageInBinary);
+            //MessageBox.Show(decryptedMessageInBinary);
 
             //byte[] bArr = new byte[decryptedMessageInBinary.Length / 8];
             //for (int n = 0; n < decryptedMessageInBinary.Length / 8; n++)
@@ -257,16 +277,16 @@ namespace VP_Project
                 //{
                 //    messageToHideInBinary += Convert.ToString((int)c, 2); //converting text message to binary
                 //}
-                byte[] bytes = Encoding.ASCII.GetBytes(messageToHide);
-                foreach (byte by in bytes)
-                {
-                    messageToHideInBinary += Convert.ToString(by, 2);
-                }
-                MessageBox.Show(messageToHideInBinary.ToString());
+                //byte[] bytes = Encoding.ASCII.GetBytes(messageToHide);
+                //foreach (byte by in bytes)
+                //{
+                //    messageToHideInBinary += Convert.ToString(by, 2);
+                //}
+                //MessageBox.Show(messageToHideInBinary.ToString());
                 int i, j, R, G, B, charIndex = 0;
                 string r, g, b;
                 int dR, dG, dB; //variables declaration
-                size = messageToHideInBinary.Length;
+                //size = messageToHideInBinary.Length;
                 for (i = 0; i < bmpImage.Width; i++) //looping through each pixel
                 {
                     for (j = 0; j < bmpImage.Height; j++)
