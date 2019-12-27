@@ -181,7 +181,7 @@ namespace VP_Project
                 textFilePath = opf.FileName;
                 tbFileBrowse.Text = textFilePath;
                 rtbTextFile.Text = File.ReadAllText(textFilePath);
-                messageToHide = rtbTextFile.Text;
+                //messageToHide = rtbTextFile.Text;
                 FileInfo fi = new FileInfo(opf.FileName);
                 textFileSize = fi.Length;
             }
@@ -321,12 +321,12 @@ namespace VP_Project
                                 charIndex++;
                             }
                         }
-                        else
-                        {
-                            r = r;
-                            g = g;
-                            b = b;
-                        }
+                        //else
+                        //{
+                        //    r = r;
+                        //    g = g;
+                        //    b = b;
+                        //}
                         //MessageBox.Show(r + "," + g + "," + b);
                         dR = Convert.ToInt32(r, 2); 
                         dG = Convert.ToInt32(g, 2); //converting modified binary to decimal
