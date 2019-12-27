@@ -109,7 +109,7 @@ namespace VP_Project
             if(decryptedMessageInBinary == messageToHideInBinary)
             {
                 rtbTextFile.Text = messageToHide;
-                File.WriteAllText(@"C:\Users\malik\OneDrive\Documents\GitHub\VP-Project\decrypted-message.txt", messageToHide);
+                File.WriteAllText(@"C:\Users\malik\OneDrive\Documents\GitHub\VP-Project\EncryptedImageAndDecryptedMessage\decrypted-message.txt", messageToHide);
                 MessageBox.Show("Decryption has been finished successfully and Decrypted Message is saved successfully in Text File.", "Decryption Successful!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -335,7 +335,7 @@ namespace VP_Project
                         bmpImage.SetPixel(i, j, Color.FromArgb(dR, dG, dB)); //setting in image pixels
                     }
                 }
-                bmpImage.Save(@"C:\Users\malik\OneDrive\Documents\GitHub\VP-Project\image.bmp"); //saving data encrypted image
+                bmpImage.Save(@"C:\Users\malik\OneDrive\Documents\GitHub\VP-Project\EncryptedImageAndDecryptedMessage\encryptedImage.bmp"); //saving data encrypted image
                 MessageBox.Show("Encryption has been finished successfully and Encrypted Image is saved successfully.", "Encryption Successful!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
