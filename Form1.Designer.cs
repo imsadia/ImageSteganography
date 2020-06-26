@@ -49,8 +49,8 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDecrypt = new System.Windows.Forms.Button();
             this.btnEncrypt = new System.Windows.Forms.Button();
-            this.gbTextFile = new System.Windows.Forms.GroupBox();
             this.rtbTextFile = new System.Windows.Forms.RichTextBox();
+            this.gbTextFile = new System.Windows.Forms.GroupBox();
             this.groupBoxBrowseFiles.SuspendLayout();
             this.groupBoxImgPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDisplayImage)).BeginInit();
@@ -293,6 +293,14 @@
             this.btnEncrypt.UseVisualStyleBackColor = false;
             this.btnEncrypt.Click += new System.EventHandler(this.BtnEncrypt_Click);
             // 
+            // rtbTextFile
+            // 
+            this.rtbTextFile.Location = new System.Drawing.Point(7, 19);
+            this.rtbTextFile.Name = "rtbTextFile";
+            this.rtbTextFile.Size = new System.Drawing.Size(254, 310);
+            this.rtbTextFile.TabIndex = 0;
+            this.rtbTextFile.Text = "";
+            // 
             // gbTextFile
             // 
             this.gbTextFile.Controls.Add(this.rtbTextFile);
@@ -303,14 +311,6 @@
             this.gbTextFile.TabIndex = 4;
             this.gbTextFile.TabStop = false;
             this.gbTextFile.Text = "Text File";
-            // 
-            // rtbTextFile
-            // 
-            this.rtbTextFile.Location = new System.Drawing.Point(6, 19);
-            this.rtbTextFile.Name = "rtbTextFile";
-            this.rtbTextFile.Size = new System.Drawing.Size(254, 310);
-            this.rtbTextFile.TabIndex = 0;
-            this.rtbTextFile.Text = "";
             // 
             // mainForm
             // 
