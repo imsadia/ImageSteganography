@@ -12,4 +12,4 @@ The project is about Image Steganography and is written in C#.
 3. Decrypted Text File will be saved in 'EncryptedImageAndDecryptedMessage' Folder.
 
 
-Note: For successful running of Decryption, Please change Directories inside Form1.cs. Thank You. 
+Note: For successfully run the Decryption process, Please change Directories inside Form1.cs. Thank You. 
